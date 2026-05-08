@@ -9,20 +9,22 @@ def get_all_calls(calls):
     return filtered_calls
 
 
-def get_call_by_id(call_id):
+def get_call_by_id(calls, call_id):
     # return a single call with its notes, or None if not found
 
-    for call in call_id:
-        if call == "note":
+    for call in calls:
+        if call["id"] == call_id:
             return call
     return None
 
     
 
-def archive_call(call_id):
+def archive_call(calls, call_id):
     # set is_archived to True, return the updated call, or None if not found
-    if "is_archived" == True:
-        return call_id
-    else:
-        return None
+
+    for call in calls:
+        if call["id"] == call_id:
+            call["is_archived"] = True
+            return call
+    return None
     

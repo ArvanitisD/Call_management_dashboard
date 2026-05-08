@@ -12,9 +12,9 @@ with open(file_path, 'r', encoding='utf-8') as f:
     all_calls = get_all_calls(data)
     print(all_calls)
 
-    get_notes =get_call_by_id(data)
+    get_notes =get_call_by_id(data, "4")
     print(get_notes)
 
-    archive_calls = archive_call(data)
+    archive_calls = archive_call(data, "2")
     print(archive_calls)
 
