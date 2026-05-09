@@ -3,7 +3,7 @@ def get_all_calls(calls):
 
     filtered_calls = []
     for call in calls:
-        if call["is_archived"] == False:
+        if not call["is_archived"]:
             filtered_calls.append(call)
 
     return filtered_calls
@@ -27,4 +27,13 @@ def archive_call(calls, call_id):
             call["is_archived"] = True
             return call
     return None
-    
+
+
+def unarchive_call(calls, call_id):
+
+    for call in calls:
+        if call["id"] == call_id:
+            call["is_archived"] = False
+            return call
+    return None
+     
