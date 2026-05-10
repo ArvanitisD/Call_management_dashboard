@@ -3,6 +3,7 @@ from services.call_service import get_all_calls
 from services.call_service import get_call_by_id
 from services.call_service import archive_call
 from services.call_service import unarchive_call
+from services.call_service import delete_call 
 
 
 file_path = 'src/data/seed_data.json'
@@ -21,5 +22,8 @@ with open(file_path, 'r', encoding='utf-8') as f:
     print(archive_calls, "\n")
 
     unarchive_calls = unarchive_call(data, "3")
-    print(unarchive_calls)
+    print(unarchive_calls, "\n")
+
+    delete_call = delete_call(data,"10")
+    print(delete_call, "\n")
 
