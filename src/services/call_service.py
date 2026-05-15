@@ -37,11 +37,6 @@ def unarchive_call(calls, call_id):
             return call
     return None
      
-# def note_call(calls, call_id):
-
-#     for call in calls:
-#         if call["notes"] 
-
 
 def delete_call(calls, call_id):
 
