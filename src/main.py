@@ -1,5 +1,7 @@
 import json 
 from services.call_service import get_all_calls, get_call_by_id, archive_call, unarchive_call, delete_call 
+from fastapi import FastAPI
+from routers.calls import router as calls_router
 
 
 
@@ -24,3 +26,16 @@ with open(file_path, 'r', encoding='utf-8') as f:
     deleted_call = delete_call(data,"10")
     print(delete_call, "\n")
 
+# Initialize FastAPI app and include routers
+app = FastAPI()
+
+app.include_router(calls_router)
+
+@app.get("/")
+def root():
+    return {"status": "Server is running"}
+
+
+app.fastAPI(title="Call Management Dashboard")
+
+app.include_router(calls_router)

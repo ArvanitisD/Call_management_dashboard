@@ -1,7 +1,10 @@
-from fastapi import APIRouter 
+from fastapi import APIRouter
+from services.call_service import CallsService
 
-router = APIRouter()
+router = APIRouter(prefix="/calls", tags=["calls"])
 
-@router.get("/calls")
+@router.get("/")
 def get_calls():
-    return {"message": "Success"}
+    service = CallsService()
+    
+    return service.get_all_calls()
