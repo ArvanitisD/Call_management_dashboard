@@ -7,7 +7,7 @@ router = APIRouter(prefix="/calls", tags=["calls"])
 def get_calls():
     service = CallService()
     
-    return service.get_all_calls()
+    return {"calls": service.get_all_calls()}
 
 @router.get("/{call_id}")
 def get_call(call_id: str):
@@ -25,7 +25,7 @@ def archive_call(call_id: str):
     
     if not updated_call:
         raise HTTPException(status_code=404, detail="Call not found")
-    return updated_call
+    return {"calls": updated_call}
 
 @router.delete("/{call_id}")
 def delete_call(call_id: str):
@@ -34,4 +34,4 @@ def delete_call(call_id: str):
 
     if not deleted_call:
         raise HTTPException(status_code=404, detail="Call not found")
-    return deleted_call
+    return {"calls": deleted_call}

@@ -1,10 +1,9 @@
 from fastapi import FastAPI
-# Κάνουμε import ΜΟΝΟ τον router. Αυτός αναλαμβάνει τα υπόλοιπα.
 from routers.calls import router as calls_router
 
 app = FastAPI(title="Call Management Dashboard")
 
-# Συνδέουμε τον router των calls
+# Connect the calls router to the main app
 app.include_router(calls_router)
 
 @app.get("/")
