@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from services.call_service import CallService
+from src.services.call_service import CallService
 
 router = APIRouter(prefix="/calls", tags=["calls"])
 
@@ -25,7 +25,7 @@ def archive_call(call_id: str):
     
     if not updated_call:
         raise HTTPException(status_code=404, detail="Call not found")
-    return {"calls": updated_call}
+    return updated_call
 
 @router.delete("/{call_id}")
 def delete_call(call_id: str):
@@ -34,4 +34,4 @@ def delete_call(call_id: str):
 
     if not deleted_call:
         raise HTTPException(status_code=404, detail="Call not found")
-    return {"calls": deleted_call}
+    return deleted_call

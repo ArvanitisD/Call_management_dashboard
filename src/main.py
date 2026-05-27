@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers.calls import router as calls_router
+from src.routers.calls import router as calls_router
 
 app = FastAPI(title="Call Management Dashboard")
 

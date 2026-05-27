@@ -1,4 +1,4 @@
-from repositories.call_repository import CallRepository
+from src.repositories.call_repository import CallRepository
 
 # Create the CallService class that will use the CallRepository to perform operations on calls
 class CallService:
@@ -18,7 +18,7 @@ class CallService:
 
 
 
-    def get_call_by_ID(self, call_id):
+    def get_call_by_id(self, call_id):
         return self.repository.get_call_by_id(call_id)
 
 
