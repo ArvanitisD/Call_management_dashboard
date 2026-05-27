@@ -4,27 +4,27 @@ A backend API for managing call records. Built with FastAPI and Python.
 
 
 
--- What it does --
+## What it does 
 This API handles call records stored in a JSON file. You can fetch all active calls, look up a specific one by ID, archive it, or delete it.
 
 
 
--- Tech Stack --
-Python : Core language 
-FastAPI : Framework
-pytest : Testing
-httpx : Required by FastAPI's TestClient
-GitHub Actions : Runs tests automatically on every push
+## Tech Stack 
+Python          : Core language 
+FastAPI         : Framework
+pytest          : Testing
+httpx           : Required by FastAPI's TestClient
+GitHub Actions  : Runs tests automatically on every push
 
 
 
--- Getting Started --
+## Getting Started
 Prerequisites
 
--Python 3.12+
--pip
+- Python 3.12+
+- pip
 
--Installation
+- Installation
 
 git clone https://github.com/your-username/Call_management_dashboard.git
 cd call-management-dashboard-Backend--Python-
@@ -37,7 +37,7 @@ API runs at http://localhost:8000
 
 
 
--- API Endpoints --
+## API Endpoints
 Method       Endpoint                 Description
 GET          /                        Welcome message 
 GET          /calls                   Get all calls (archived ones are excluded)
@@ -47,19 +47,19 @@ DELETE       /calls/{id}              Delete a call
 
 
 
--- Features --
+## Features
 
--Get all calls, with archived ones filtered out automatically
--Get a call by ID
--Archive a call
--Delete a call
--Tests for every endpoint
--CI pipeline that runs on every push
--Deployment with Vercel
+- Get all calls, with archived ones filtered out automatically
+- Get a call by ID
+- Archive a call
+- Delete a call
+- Tests for every endpoint
+- CI pipeline that runs on every push
+- Deployment with Vercel
 
 
 
--- Known Limitations --
+## Known Limitations
 Data lives in a JSON file, so it resets every time the server restarts. There's no authentication either, so all endpoints are public. No pagination, so if the dataset grows large, performance will take a hit.
 
 
