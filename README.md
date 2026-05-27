@@ -10,11 +10,11 @@ This API handles call records stored in a JSON file. You can fetch all active ca
 
 
 ## Tech Stack 
-Python          : Core language 
-FastAPI         : Framework
-pytest          : Testing
-httpx           : Required by FastAPI's TestClient
-GitHub Actions  : Runs tests automatically on every push
+- Python          : Core language 
+- FastAPI         : Framework
+- pytest          : Testing
+- httpx           : Required by FastAPI's TestClient
+- GitHub Actions  : Runs tests automatically on every push
 
 
 
@@ -38,12 +38,12 @@ API runs at http://localhost:8000
 
 
 ## API Endpoints
-Method       Endpoint                 Description
-GET          /                        Welcome message 
-GET          /calls                   Get all calls (archived ones are excluded)
-GET          /calls/{id}              Get one call by ID
-PATCH        /calls/{id}/archive      Archive a call
-DELETE       /calls/{id}              Delete a call
+- Method       Endpoint                 Description
+- GET          /                        Welcome message 
+- GET          /calls                   Get all calls (archived ones are excluded)
+- GET          /calls/{id}              Get one call by ID
+- PATCH        /calls/{id}/archive      Archive a call
+- DELETE       /calls/{id}              Delete a call
 
 
 
