@@ -2,11 +2,13 @@ import json
 import os
 
 class CallRepository:
-    def __init__(self):
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        self.file_path = os.path.join(current_dir, '../data/seed_data.json')
-
-        self.calls_data = self._load_data()
+    def __init__(self, data=None):
+        if data is not None:
+            self.calls_data = data
+        else:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            self.file_path = os.path.join(current_dir, '../data/seed_data.json')
+            self.calls_data = self._load_data()
 
     def _load_data(self):
         try:
@@ -25,4 +27,10 @@ class CallRepository:
         for call in self.calls_data:
             if call["id"] == call_id:
                 return call
+        return None
+    
+    def delete_call(self, call_id):
+        for i, call in enumerate(self.calls_data):
+            if call["id"] == call_id:
+                return self.calls_data.pop(i)
         return None

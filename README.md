@@ -1,4 +1,6 @@
-Call Management Dashboard API
+# Call Management Dashboard API
+
+![CI](https://github.com/ArvanitisD/Call_management_dashboard/actions/workflows/ci.yml/badge.svg)
 
 A backend API for managing call records. Built with FastAPI and Python.
 
@@ -18,23 +20,28 @@ This API handles call records stored in a JSON file. You can fetch all active ca
 
 
 
-## Getting Started
-Prerequisites
+## Installation
 
-- Python 3.12+
-- pip
+### 1. Clone the repository
+\```bash
+git clone https://github.com/ArvanitisD/Call_management_dashboard.git
+\```
 
-- Installation
+### 2. Create virtual environment
+\```bash
+python -m venv venv
+source venv/Scripts/activate
+\```
 
-git clone https://github.com/your-username/Call_management_dashboard.git
-cd call-management-dashboard-Backend--Python-
-
+### 3. Install dependencies
+\```bash
 pip install -r requirements.txt
+\```
 
+### 4. Run the app
+\```bash
 uvicorn src.main:app --reload
-
-API runs at http://localhost:8000
-
+\```
 
 
 ## API Endpoints

@@ -3,8 +3,8 @@ from src.repositories.call_repository import CallRepository
 # Create the CallService class that will use the CallRepository to perform operations on calls
 class CallService:
     
-    def __init__(self):
-        self.repository = CallRepository()
+    def __init__(self, repository=None):
+        self.repository = repository if repository is not None else CallRepository()
 
 
 
